@@ -1,0 +1,15 @@
+environment_config:
+  path: ./src/configs/configsEnvironment.dart
+  fields:
+    ENV:
+      env_var: APP_ENV
+      default: 'development'
+      dotenv: false
+      static: false
+
+    API_URL:
+      env_var: API_URL
+      const: true
+      dotenv: false
+      static: false
+      default: 'http://accessweb.genusacademico.com/'
