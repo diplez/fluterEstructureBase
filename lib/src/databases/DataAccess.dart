@@ -14,7 +14,7 @@ class DataAccess{
                                     "FOREIGN KEY (rol_id)"
                                     "REFERENCES rol(id))"; //"FOREIGN KEY(rol_id) REFERENCES rol(id)
   String SQL_C_Table_Rol = "CREATE TABLE rol(id INTEGER PRIMARY KEY autoincrement, code TEXT not null, name TEXT not null)";
-  Database _database;
+  late Database _database;
 
   Future<Database> get database async {
     if (_database != null) return _database;

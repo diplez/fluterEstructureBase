@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:genus_asio/src/models/RoleModel.dart';
+import 'RoleModel.dart';
 
 /**
  *  Usuario
@@ -10,7 +10,7 @@ class User {
   String password;
   Rol roles;
 
-  User({this.id,this.username, this.password, this.roles});
+  User({required this.id,required this.username,required this.password,required this.roles});
 
   Map<String, dynamic> toMap() {
     return {

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import './blocs/loginBloc/bloc/bloc.dart';
-import './blocs/loginBloc/loginLogic.dart';
-import './dao/UserDao.dart';
-import './models/UserModel.dart';
-import './models/RoleModel.dart';
-import './views/home/homeView.dart';
-import './constants/const_application.dart';
-import './utils/colorsManager.dart';
+import 'views/login/loginView.dart';
+import 'blocs/loginBloc/bloc/bloc.dart';
+import 'blocs/loginBloc/loginLogic.dart';
+import 'dao/UserDao.dart';
+import 'models/UserModel.dart';
+import 'models/RoleModel.dart';
 
 class App extends StatelessWidget {
   // This widget is the root of your application.
@@ -20,16 +18,16 @@ class App extends StatelessWidget {
     dato.insertUser(new User(id: 2, username: 'NATHY', password: 'clave',roles: rol));
 
     return MaterialApp(
-      title: 'Nota D',
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange, //convertFormatColor(COLOR_SECUNDARY),
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:BlocProvider(
         create: (_) => LoginBloc(
           logic: LoginLogic(),
         ),
-        child: HomeView()
+        child: LoginView()
       ),
     );
   }

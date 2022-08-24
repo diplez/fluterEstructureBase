@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
  */
 class ManageRepository{
 
-  Map<String, String> headers;
+  late Map<String, String> headers;
   int timeOut = 60;
 
   ManageRepository(){
@@ -29,7 +29,7 @@ class ManageRepository{
    */
   Future<http.Response> get(String url) {
     return http.get(
-        url,
+        Uri.parse(url),
         headers:this.headers
     ).timeout(Duration(seconds: timeOut));
   }
@@ -39,7 +39,7 @@ class ManageRepository{
    */
   Future<http.Response> post(String url,Map<String, String> body) {
     return http.post(
-        url,
+        Uri.parse(url),
         body: json.encode(body),
         headers:this.headers
     ).timeout(Duration(seconds: timeOut));
@@ -50,7 +50,7 @@ class ManageRepository{
    */
   Future<http.Response> delete(String url,Map<String, String> body) {
     return http.delete(
-        url,
+        Uri.parse(url),
         headers:this.headers
     ).timeout(Duration(seconds: timeOut));
   }

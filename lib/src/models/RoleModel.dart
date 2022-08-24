@@ -3,11 +3,11 @@
  */
 class Rol {
 
-  int id;
-  String code;
-  String name;
+  int id = 0;
+  late String code;
+  late String name;
 
-  Rol({this.id,this.code, this.name});
+  Rol({required this.id,required this.code,required this.name});
 
   Map<String, dynamic> toMap() {
     return {

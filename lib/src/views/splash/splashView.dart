@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
 
-  SplashView({Key key}) : super(key:key);
+  SplashView({required Key key}) : super(key:key);
 
   @override
   SplashViewState createState() => SplashViewState();

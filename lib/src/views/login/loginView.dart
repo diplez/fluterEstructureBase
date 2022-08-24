@@ -1,14 +1,14 @@
+import 'package:contarz/src/constants/const_application.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genus_asio/src/constants/const_application.dart';
-import './../../widgets/inputCustomWidget/inputCustonWidget.dart';
-import './../../utils/colorsManager.dart';
-import './../../utils/mediaQuerysCustom.dart';
-import './../../blocs/loginBloc/bloc/bloc.dart';
+import '../../widgets/inputCustomWidget/inputCustonWidget.dart';
+import '../../utils/colorsManager.dart';
+import '../../utils/mediaQuerysCustom.dart';
+import '../../blocs/loginBloc/bloc/bloc.dart';
 
 class LoginView extends StatefulWidget {
-  LoginView({Key key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
 
   @override
   _LoginViewState createState() => _LoginViewState();

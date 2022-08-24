@@ -6,9 +6,9 @@ import 'package:flutter/cupertino.dart';
  */
 class MediaQueryCustom{
 
-  Size sizeScreenPhone;
-  EdgeInsets sizekeyboardPhone;
-  BuildContext context;
+  late Size sizeScreenPhone;
+  late EdgeInsets sizekeyboardPhone;
+  late BuildContext context;
 
   MediaQueryCustom(BuildContext context){
     this.context = context;

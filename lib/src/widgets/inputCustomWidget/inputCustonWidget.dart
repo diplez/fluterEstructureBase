@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './../../constants/const_application.dart';
+import '../../constants/const_application.dart';
 
 class InputCustonWidget extends StatefulWidget {
 
@@ -9,11 +9,11 @@ class InputCustonWidget extends StatefulWidget {
   bool obscureText;
   Color colorBorderInput;
   Color colorBorderFocusedInput;
-  TextEditingController controllerInput;
+  TextEditingController? controllerInput;
 
   InputCustonWidget({
-    Key key,
-    this.hintText,
+    Key? key,
+    this.hintText="",
     this.obscureText=false,
     this.colorBorderInput = Colors.black12,
     this.colorBorderFocusedInput = Colors.black12,
@@ -52,7 +52,7 @@ class InputCustonWidgetState extends State<InputCustonWidget>{
   }
 
   void _onClearText() {
-    widget.controllerInput.clear();
+    widget.controllerInput?.clear();
   }
 
   @override
@@ -66,7 +66,7 @@ class InputCustonWidgetState extends State<InputCustonWidget>{
           children: <Widget>[
             TextFormField(
               validator: (value) {
-                if (value.isEmpty) {
+                if (value!.isEmpty) {
                   return 'Please enter some text';
                 }
                 return null;

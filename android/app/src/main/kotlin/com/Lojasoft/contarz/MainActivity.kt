@@ -1,4 +1,4 @@
-package com.lojasoft.genus_asio
+package com.Lojasoft.contarz
 
 import io.flutter.embedding.android.FlutterActivity
 

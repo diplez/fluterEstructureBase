@@ -1,13 +1,13 @@
 import 'loginInterface.dart';
-import './../../repositorys/manageRepository.dart';
+import '../../repositorys/manageRepository.dart';
 
 class LoginLogic extends  counterLogicAbstrac{
   @override
-  Future<String> loginIn(String email, String password) async {
+  Future<String> loginIn(String? email, String? password) async {
     // TODO: implement loginIn
     //await Future.delayed(Duration(seconds: 2));
     final repository = new ManageRepository();
-    String token;
+    String token="";
 
     await repository.get('https://jsonplaceholder.typicode.com/albums').
     then((value) => {

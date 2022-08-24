@@ -1,6 +1,6 @@
 
-import './../databases/DataAccess.dart';
-import './../models/UserModel.dart';
+import '../databases/DataAccess.dart';
+import '../models/UserModel.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UserDao{
