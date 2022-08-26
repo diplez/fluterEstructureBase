@@ -6,9 +6,9 @@ class LoginLogic extends  counterLogicAbstrac{
   Future<String> loginIn(String? email, String? password) async {
     // TODO: implement loginIn
     //await Future.delayed(Duration(seconds: 2));
-    final repository = new ManageRepository();
+    final repository = new ManageService();
     String token="";
-
+    print('data de prueb');
     await repository.get('https://jsonplaceholder.typicode.com/albums').
     then((value) => {
       token = 'EXITO'

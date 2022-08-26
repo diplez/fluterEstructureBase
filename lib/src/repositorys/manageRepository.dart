@@ -4,12 +4,12 @@ import 'package:http/http.dart' as http;
 /**
  * Clase para crear conexiones genericas
  */
-class ManageRepository{
+class ManageService{
 
   late Map<String, String> headers;
   int timeOut = 60;
 
-  ManageRepository(){
+  ManageService(){
     loadHeaders();
   }
 

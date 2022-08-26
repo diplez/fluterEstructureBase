@@ -1,7 +1,9 @@
 import 'package:contarz/src/constants/const_application.dart';
+import 'package:contarz/src/views/home/homeView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import '../../widgets/inputCustomWidget/inputCustonWidget.dart';
 import '../../utils/colorsManager.dart';
 import '../../utils/mediaQuerysCustom.dart';
@@ -34,7 +36,7 @@ class _LoginViewState extends State<LoginView> {
   }
 
   void _doLogin() {
-    print('======================= diei');
+    print('${DateTime.now()}  Has presionado el boton para autenticarte');
     BlocProvider.of<LoginBloc>(context).add(
       LoginInEvent(txtInputUser.text, txtInputPassword.text),
     );
@@ -49,6 +51,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     var sizeScream = MediaQueryCustom(context);
+
     return Scaffold(
         body: BlocListener<LoginBloc, LoginState>(
         listener: (context, state) {
@@ -57,9 +60,7 @@ class _LoginViewState extends State<LoginView> {
           }
           if (state is LoginSucessState) {
             print('EXITO VIEW');
-            /**Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) => MainPage())
-            );**/
+            Navigator.pushNamed(context, '/about');
           }
         },
         child: BlocBuilder<LoginBloc, LoginState>(
@@ -78,7 +79,7 @@ class _LoginViewState extends State<LoginView> {
                             height: sizeScream.heightScreen()/3.5,
                             child: Image(
                               image: AssetImage(
-                                'lib/src/resources/images/logoGenus.png',
+                                'assets/resources/images/logoGenus.png',
                               ),
                               fit: BoxFit.fitWidth,
                             ),
@@ -96,7 +97,7 @@ class _LoginViewState extends State<LoginView> {
                                     ),
                                   ),
                                   Text(
-                                    'Plataforma de Gestion Académica',
+                                    FlutterI18n.translate(context, "loginView.title"),
                                     style: TextStyle(
                                       color: convertFormatColor(COLOR_PRIMARY),
                                     ),

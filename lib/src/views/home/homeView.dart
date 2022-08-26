@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genus_asio/src/constants/const_application.dart';
-import 'package:genus_asio/src/constants/const_titles_app.dart';
+import 'package:contarz/src/constants/const_application.dart';
+import 'package:contarz/src/constants/const_titles_app.dart';
 import './../../widgets/inputCustomWidget/inputCustonWidget.dart';
 import './../../utils/colorsManager.dart';
 import './../../utils/mediaQuerysCustom.dart';
 import './../../blocs/loginBloc/bloc/bloc.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({Key key}) : super(key: key);
+  HomeView({Key? key}) : super(key: key);
 
   @override
   _HomeViewState createState() => _HomeViewState();
@@ -51,7 +51,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
 
     List<Widget> ListMyWidgets() {
-      List<Widget> list = new List();
+      List<Widget> list = <Widget>[];
       list.add(new Text("hi"));
       list.add(new Text("hi2"));
       list.add(new Text("hi3"));

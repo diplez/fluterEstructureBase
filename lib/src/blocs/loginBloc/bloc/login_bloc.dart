@@ -14,20 +14,27 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   LoginBloc({this.logic}) : super(LoginInitialState()) {
     // TODO: implement
+    print('LoginBloc -> es');
+    on<LoginInEvent>(mapEventToState);
   }
 
   @override
-  Stream<LoginState> mapEventToState(
+  Future<void> mapEventToState(
       LoginEvent event,
-      ) async* {
+      Emitter<LoginState> emit,
+      ) async {
+    print('data');
     // TODO: implement mapEventToState
     if(event is LoginInEvent){
-      yield* _doLogin(event);
+      var data = await (_doLogin(event).last);
+      print('${data} estado devuelto');
+      emit(data);
     }
   }
 
   Stream<LoginState> _doLogin(LoginInEvent event) async* {
     try {
+      print("${event.email} ===================");
       yield LoginInitialState();
       var token = await logic?.loginIn(event.email, event.password);
       print("${token} ===================");
