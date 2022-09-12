@@ -9,9 +9,11 @@ import 'blocs/loginBloc/loginLogic.dart';
 import 'dao/UserDao.dart';
 import 'models/UserModel.dart';
 import 'models/RoleModel.dart';
+import 'package:localstore/localstore.dart';
 
 class App extends StatelessWidget {
 
+  final _db = Localstore.instance;
   final FlutterI18nDelegate flutterI18nDelegate;
 
   App(this.flutterI18nDelegate);
@@ -22,6 +24,35 @@ class App extends StatelessWidget {
     var dato = UserDao();
     var rol = new Rol(id:1,code: "Rol_001",name: "DOCENTE");
     dato.insertUser(new User(id: 2, username: 'NATHY', password: 'clave',roles: rol));
+
+    // gets new id
+    final id = _db.collection('todos').doc().id;
+    print("--"+id);
+// save the item
+    /**_db.collection('todos').doc(id).set({
+        'title': 'Todo title',
+        'done': false
+        });**/
+
+    final items = Future(() async {
+      return await _db.collection('todos').get();
+    });
+
+    items.then((value) => {
+      value?.entries.forEach((element) {
+        print(element.key);
+      })
+    });
+
+    items.asStream().listen((event) {
+      print(event?.entries.length);
+    });
+
+    _db.collection('todos').doc('38g0gdong').delete();
+    //final stream = _db.collection('todos').doc().delete();
+    //stream.listen((event) {print("key -> "+event.values.toString());});
+
+    //print("datos "+ Future.wait(stream.single));
 
     return MaterialApp(
       title: 'Flutter Demo',
