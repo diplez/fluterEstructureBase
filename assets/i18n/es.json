@@ -1,0 +1,64 @@
+{
+  "generals":{
+    "fiedls": {
+      "firstname": "Nombres",
+      "lastname": "Apellidos",
+      "dni": "RUC",
+      "nameBussines": "Razon social",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "password": "Contraseña",
+      "passwordConfirm": "Confirmar contraseña"
+    },
+    "validation": {
+      "required": "Campo requerido"
+    }
+  },
+  "loginView": {
+    "title": "ContarZ",
+    "subtitle": "Academica Genus Lojasoft",
+    "button":{
+      "password": "Olvide mi contraseña",
+      "login": "Iniciar sesión",
+      "account": "Crear nueva cuenta",
+      "": ""
+    },
+    "textinput": {
+      "hint": {
+        "user": "Ingrese su usuario",
+        "password": "Ingrese su clave"
+      }
+    }
+  },
+  "recoveryPassView": {
+    "appbar": {
+      "title": "Recuperar contraseña"
+    },
+    "title": "Ingresa tu correo electrónico y\nte enviaremos un código de reinicio\nde contraseña",
+    "textinput": {
+      "hint": {
+        "email": "Correo electrónico"
+      }
+    },
+    "button":{
+      "send": "Enviar"
+    }
+  },
+  "createAccoutView": {
+    "appbar": {
+      "title": "Nueva cuenta"
+    },
+    "button":{
+      "register": "Registrar"
+    }
+  },
+  "setPlanView": {
+    "title1": "Hola, {name}",
+    "title2": "Bienvenido(a) a contarz",
+    "subTitle": "Por favor, selecciona el plan que mejor se adapta a ti.",
+    "description": "Una vez hayas seleccionado y guardado tu plan un asesor se comunicará contigo para el siguiente y último paso.\n\nSi necesitas más información antes de seleccionar un plan, puedes escribirnos a soporte@contarz.ec o al 092 456 7890.",
+    "button":{
+      "register": "Registrar"
+    }
+  }
+}
