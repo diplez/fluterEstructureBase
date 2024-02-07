@@ -1,0 +1,41 @@
+name: Dart CI
+
+on: 
+  push:
+    branches: [ baseEstructureV3 ]
+#  pull_request:
+#    branches: [ master ]
+
+env:
+  flutter_channel: 'stable' # or: 'dev' or 'beta'
+  flutter_version: '2.2.2'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable' # or: 'beta', 'dev' or 'master'
+
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+
+    - run: flutter pub get
+      working-directory: ./
+    # - run: flutter test
+
+    - name: build APK
+      run: flutter build apk
+      working-directory: ./
+
+    - name: upload APK
+      uses: actions/upload-artifact@v1
+      with:
+        name: apk
+        path: ./build/app/outputs/apk/release/app-release.apk
